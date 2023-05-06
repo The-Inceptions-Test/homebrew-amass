@@ -9,7 +9,7 @@ class Amass < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/OWASP/Amass/releases/download/v3.22.2/amass_macos_amd64.zip"
+      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.22.2/amass_macos_amd64.zip"
       sha256 "f01d1e178abb9200266fd816ec512b33f5f1b76f8d5d3953678c42003e526692"
 
       def install
@@ -17,7 +17,7 @@ class Amass < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/OWASP/Amass/releases/download/v3.22.2/amass_macos_arm64.zip"
+      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.22.2/amass_macos_arm64.zip"
       sha256 "8f71ce37ef8df7223f14a8c3021b94b2b7d3bcd23b813df32497826887e0b14a"
 
       def install
@@ -28,7 +28,7 @@ class Amass < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/OWASP/Amass/releases/download/v3.22.2/amass_linux_amd64.zip"
+      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.22.2/amass_linux_amd64.zip"
       sha256 "1f0ff9ff279c93bf55a124a2ac36a4b7e97b77cfd7cdd221375b1449b7c286b1"
 
       def install
@@ -36,7 +36,7 @@ class Amass < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/OWASP/Amass/releases/download/v3.22.2/amass_linux_arm.zip"
+      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.22.2/amass_linux_arm.zip"
       sha256 "b256ce69db7a774dc39ccef3b0281135b3fc57b7c7826322ed6736ec5259839a"
 
       def install
@@ -44,7 +44,7 @@ class Amass < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/OWASP/Amass/releases/download/v3.22.2/amass_linux_arm64.zip"
+      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.22.2/amass_linux_arm64.zip"
       sha256 "6ae1f12ee3a93a2eb5375d65509afd69c5b34bda454d44c585793f112714d4e1"
 
       def install

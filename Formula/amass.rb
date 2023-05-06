@@ -5,20 +5,20 @@
 class Amass < Formula
   desc "In-depth Attack Surface Mapping and Asset Discovery"
   homepage "https://owasp.org/www-project-amass/"
-  version "3.22.2"
+  version "3.23.76"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.22.2/amass_macos_amd64.zip"
-      sha256 "f01d1e178abb9200266fd816ec512b33f5f1b76f8d5d3953678c42003e526692"
+      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.23.76/amass_Darwin_amd64.zip"
+      sha256 "28c9bbb35c05f7ec4979201bfac3216973f8818fb88583b23b0afcf6fae482fb"
 
       def install
         bin.install "amass"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.22.2/amass_macos_arm64.zip"
-      sha256 "8f71ce37ef8df7223f14a8c3021b94b2b7d3bcd23b813df32497826887e0b14a"
+      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.23.76/amass_Darwin_arm64.zip"
+      sha256 "dcf76ce75943cc31310e527610e9f32b32aa1a4bef79914052687976953db31b"
 
       def install
         bin.install "amass"
@@ -27,25 +27,25 @@ class Amass < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.23.76/amass_Linux_arm64.zip"
+      sha256 "3d37ec9e14b2dc1fd408e06cc0eecd1da03aa263542303b77e64eb56acb9ef5d"
+
+      def install
+        bin.install "amass"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.22.2/amass_linux_amd64.zip"
-      sha256 "1f0ff9ff279c93bf55a124a2ac36a4b7e97b77cfd7cdd221375b1449b7c286b1"
+      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.23.76/amass_Linux_amd64.zip"
+      sha256 "81116012e871dd77ad233cd34c12d3dd5a1920253b5b1e1a6fd5ec8f29808f82"
 
       def install
         bin.install "amass"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.22.2/amass_linux_arm.zip"
-      sha256 "b256ce69db7a774dc39ccef3b0281135b3fc57b7c7826322ed6736ec5259839a"
-
-      def install
-        bin.install "amass"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.22.2/amass_linux_arm64.zip"
-      sha256 "6ae1f12ee3a93a2eb5375d65509afd69c5b34bda454d44c585793f112714d4e1"
+      url "https://github.com/The-Inceptions-Test/amass/releases/download/v3.23.76/amass_Linux_arm.zip"
+      sha256 "0cd2edc2bdcf6ca3eee34fb11206f91ae1325737a1711bb56ed1dabc473a5631"
 
       def install
         bin.install "amass"
